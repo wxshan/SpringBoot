@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache name="es">
+
+    <diskStore path="java.io.tmpdir"/>
+
+    <cache name="authorizationCache"
+           maxEntriesLocalHeap="2000"
+           eternal="false"
+           timeToIdleSeconds="3600"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+    >
+    </cache>
+
+    <cache name="authenticationCache"
+           maxEntriesLocalHeap="2000"
+           eternal="false"
+           timeToIdleSeconds="3600"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+    >
+    </cache>
+
+    <defaultCache name="shiro-activeSessionCache"
+                  maxEntriesLocalHeap="100000"
+                  eternal="false"
+                  timeToIdleSeconds="2592000"
+                  overflowToDisk="true"
+    >
+    </defaultCache>
+
+</ehcache>
