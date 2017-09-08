@@ -14,4 +14,11 @@ public interface UserMapper {
 
     @Select("select count(*) from manager where username = #{username} ")
     Integer ifUsernameExists(String username);
+
+    void deleteById(Integer id);
+
+    User getById(Integer id);
+
+    void update(User user);
+
 }

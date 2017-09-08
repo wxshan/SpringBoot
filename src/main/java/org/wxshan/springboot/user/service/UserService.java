@@ -10,4 +10,12 @@ public interface UserService {
     User getByUsername(String username);
 
     boolean add(User user);
+
+    void deleteById(Integer id);
+
+    User getById(Integer id);
+
+    Integer ifUsernameExists(String username);
+
+    void update(User user);
 }

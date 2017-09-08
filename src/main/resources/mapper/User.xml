@@ -32,4 +32,23 @@
         INSERT INTO manager (username, pwd, name, create_time, roleid, phone, remarks)
         VALUES (#{username}, #{pwd}, #{name}, #{createTime}, #{roleId}, #{phone}, #{remarks})
     </insert>
+
+    <delete id="deleteById">
+        DELETE FROM sby.public.manager
+        WHERE id = #{id};
+    </delete>
+
+    <select id="getByID" resultMap="resultUserMap">
+        SELECT *
+        FROM manager
+        JOIN role
+        ON manager.id = #{id} AND manager.roleid = role.id
+    </select>
+
+    <update id="update">
+        UPDATE sby.public.manager
+        SET username    = #{username}, pwd = #{pwd}, roleid = #{roleId}, name = #{name},
+        create_time = #{createTime}, phone = #{phone}, remarks = #{remarks}
+        WHERE manager.id = #{id};
+    </update>
 </mapper>
