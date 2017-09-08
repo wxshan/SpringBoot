@@ -2,6 +2,7 @@ package org.wxshan.springboot.base;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Data;
 
 import javax.persistence.Id;
 import javax.persistence.Transient;
@@ -11,6 +12,7 @@ import java.io.Serializable;
 /**
  * Created by Administrator on 2017/9/6 0006.
  */
+@Data
 public class BaseEntity implements Serializable{
 
     @Id
@@ -24,5 +26,6 @@ public class BaseEntity implements Serializable{
     @Transient
     @JsonIgnore
     private Integer pageSize = 10; //每页显示的条数
+
 
 }
