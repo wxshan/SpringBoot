@@ -24,4 +24,9 @@ public class PermissionServiceImpl implements PermissionService{
     public List<Permission> getAll() {
         return permissionMapper.getAll();
     }
+
+    @Override
+    public List<Permission> getByIds(Integer[] permissionIDs) {
+        return (List<Permission>) permissionMapper.selectByPrimaryKey(permissionIDs);
+    }
 }
