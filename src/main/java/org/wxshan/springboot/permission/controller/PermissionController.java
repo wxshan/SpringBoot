@@ -22,6 +22,10 @@ public class PermissionController extends BaseController{
     @Resource
     private PermissionService permissionServiceImpl;
 
+    /**
+     * 获得权限的列表信息
+     * @return
+     */
     @RequestMapping(value = "getALL",method = RequestMethod.POST)
     public Map<String, Object> getAll(){
 

@@ -2,6 +2,7 @@ package org.wxshan.springboot.role.service.Impl;
 
 import com.github.pagehelper.PageHelper;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.wxshan.springboot.Mapper.RoleMapper;
 import org.wxshan.springboot.domain.Role;
 import org.wxshan.springboot.role.service.RoleService;
@@ -14,6 +15,7 @@ import java.util.List;
  * Created by Administrator on 2017/9/8 0008.
  */
 @Service
+@Transactional
 public class RoleServiceImpl implements RoleService{
 
     @Resource

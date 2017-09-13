@@ -35,6 +35,11 @@ public class RoleController extends BaseController{
     @Resource
     private PermissionService permissionService;
 
+    /**
+     * 获取角色分页列表
+     * @param role
+     * @return
+     */
     @RequestMapping(value = "/list", method = RequestMethod.POST)
     @RequiresAuthentication
     @RequiresPermissions("role:read")
@@ -48,6 +53,10 @@ public class RoleController extends BaseController{
         return  generateSuccessResult(map);
     }
 
+    /**
+     * 获取全部列表
+     * @return
+     */
     @RequestMapping(value = "/getAll", method = RequestMethod.POST)
     @RequiresAuthentication
     @RequiresPermissions(value = {"user:read","role:read"}, logical = Logical.OR)
@@ -56,6 +65,11 @@ public class RoleController extends BaseController{
         return  generateSuccessResult(all);
     }
 
+    /**
+     * 根据id删除角色
+     * @param id
+     * @return
+     */
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     @RequiresAuthentication
     @RequiresPermissions("role:read")
@@ -64,6 +78,12 @@ public class RoleController extends BaseController{
         return generateSuccessResult();
     }
 
+    /**
+     * 添加角色
+     * @param role
+     * @param permissionIDs
+     * @return
+     */
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     @RequiresAuthentication
     @RequiresPermissions("role:read")
@@ -79,6 +99,12 @@ public class RoleController extends BaseController{
         }
     }
 
+    /**
+     * 更新角色
+     * @param role
+     * @param permissionIds
+     * @return
+     */
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     @RequiresAuthentication
     @RequiresPermissions("role:read")
@@ -102,6 +128,11 @@ public class RoleController extends BaseController{
         return generateSuccessResult();
     }
 
+    /**
+     * 获取单个角色信息
+     * @param id
+     * @return
+     */
     @RequestMapping(value = "/getSingleRole", method = RequestMethod.POST)
     @RequiresAuthentication
     @RequiresPermissions("role:read")

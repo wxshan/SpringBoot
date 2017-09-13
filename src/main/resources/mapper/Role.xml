@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.wxshan.springboot.Mapper.RoleMapper">
+
+
+    <resultMap type="Role" id="resultRoleMap">
+        <id property="id" column="id"/>
+        <result property="roleName" column="rolename"/>
+        <result property="description" column="description"/>
+
+        <result property="createTime" column="createTime"/>
+        <result property="updateTime" column="updateTime"/>
+
+    </resultMap>
+
+    <select id="findById" resultMap="resultRoleMap">
+        SELECT *
+        FROM role
+        WHERE id = #{id}
+    </select>
+
+    <select id="getAll" resultMap="resultRoleMap">
+        SELECT *
+        FROM role
+        ORDER BY id DESC
+    </select>
+
+
+    <insert id="add">
+        INSERT INTO role (rolename, description,  createtime, updateTime)
+        VALUES (#{roleName}, #{description},
+
+        #{createTime}, #{updateTime});
+
+    </insert>
+
+    <delete id="delete">
+        DELETE FROM role
+        WHERE id = #{id};
+    </delete>
+
+    <update id="update">
+        UPDATE role
+        SET roleName       = #{roleName}, description = #{description},
+
+        createTime     = #{createTime}, updateTime = #{updateTime}
+        WHERE role.id = #{id};
+    </update>
+
+
+    <select id="ifRoleNameExists" resultType="int">
+        SELECT count(1)
+        FROM role
+        WHERE rolename = #{roleName}
+    </select>
+
+</mapper>

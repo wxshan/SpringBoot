@@ -1,5 +1,6 @@
 package org.wxshan.springboot.permission.service.Impl;
 
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.wxshan.springboot.Mapper.PermissionMapper;
@@ -15,7 +16,7 @@ import java.util.List;
 
 @Transactional
 @Service
-public class PermissionServiceImpl implements PermissionService{
+public class PermissionServiceImpl implements PermissionService {
 
     @Resource
     private PermissionMapper permissionMapper;
@@ -27,6 +28,6 @@ public class PermissionServiceImpl implements PermissionService{
 
     @Override
     public List<Permission> getByIds(Integer[] permissionIDs) {
-        return (List<Permission>) permissionMapper.selectByPrimaryKey(permissionIDs);
+        return permissionMapper.getByIds(permissionIDs);
     }
 }

@@ -92,6 +92,12 @@ public class UserController extends BaseController{
         return generateSuccessResult();
     }
 
+    /**
+     * 更新用户信息
+     * @param user
+     * @param bindingResult
+     * @return
+     */
     @RequiresAuthentication
     @RequestMapping(value = "/update",method = RequestMethod.POST)
     @RequiresPermissions("user:read")
