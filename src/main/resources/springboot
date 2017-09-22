@@ -1,0 +1,28 @@
+CREATE TABLE manager
+(
+  id          SERIAL NOT NULL PRIMARY KEY,
+  username    VARCHAR(20),
+  pwd         VARCHAR(50),
+  create_time TIMESTAMP,
+  name        VARCHAR(20),
+  roleid      INTEGER
+);
+
+CREATE TABLE permission
+(
+  id                    SERIAL NOT NULL PRIMARY KEY,
+  category              VARCHAR(50),
+  permissionName        VARCHAR(50),
+  permissionDisplayName VARCHAR(50)
+);
+
+
+CREATE TABLE role
+(
+  id             SERIAL NOT NULL PRIMARY KEY,
+  roleName       VARCHAR(50),
+  description    VARCHAR(50),
+  permissionlist JSONB,
+  createtime     TIMESTAMP,
+  updatetime     TIMESTAMP
+);

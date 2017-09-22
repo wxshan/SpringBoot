@@ -1,0 +1,21 @@
+1.本项目的基础框架是：SpringBoot+Shiro+Redis+Mybatis+Druid+mysql
+2.Springboot的是有内置tomcat的，所以运行程序只要运行SpringbootApplication这个类就好了
+3.springboot的基础配置文件是application.properties，生产环境的配置文件是：application-product.properties,
+测试环境的配置文件是：application-test.properties，默认是测试环境。
+4.编写项目的基本步骤：创建controller继承基础的BaseController,还有实体类也继承BaseEntity，
+具体的可以参考user模块的编写。
+5.包的说明：
+    base: 包括基础的控制器和实体类
+    config:springboot的测试用类来替代配置文件，里面是项目的配置信息
+    domain:实体类
+    filters:过滤器，里面有编码过滤器
+    mapper:mybatis的mapper包
+    mybatis.typehandles: 是数据库的类型信息与java类型的转换兼容包
+    permission:权限操作
+    redis:redis的相关配置
+    role:角色操作
+    shiro:shiro的相关配置信息
+    user:用户操作
+    utils:工具包
+    vo:用于前台展示的实体类
+6.项目测试在test包下进行测试。
